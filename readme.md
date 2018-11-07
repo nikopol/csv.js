@@ -7,34 +7,34 @@ small (3k) CSV read/writer in vanilla flavor of javascript.
 
 ### `CSV.read(raw[,sep[,eol]])`
 
-| parameter | default value | purpose                           |
-|-----------|---------------|-----------------------------------|
-| `raw`     |               | a string with the raw encoded csv |
-| `sep`     | ;             | columns separator                 |
-| `eol`     | \n            | rows separator                    |
+| parameter | default value | type   | purpose                           |
+|-----------|---------------|--------|-----------------------------------|
+| `raw`     |               | string |a string with the raw encoded csv  |
+| `sep`     | ;             | char   |columns separator                  |
+| `eol`     | \n            | char   |rows separator                     |
 
 return: rows array of columns arrays
 
 
 ### `CSV.readObjects(raw[,sep[,eol[,columns]]])`
 
-| parameter | default value    | purpose                           |
-|-----------|------------------|-----------------------------------|
-| `raw`     |                  | a string with the raw encoded csv |
-| `sep`     | ;                | columns separator                 |
-| `eol`     | \n               | rows separator                    |
-| `columns` | null (first row) | define columns names              |
+| parameter | default value | type     | purpose                           |
+|-----------|---------------|----------|-----------------------------------|
+| `raw`     |               | string   |a string with the raw encoded csv  |
+| `sep`     | ;             | char     |columns separator                  |
+| `eol`     | \n            | char     |rows separator                     |
+| `columns` | null (1st row)| [string] |array columns names                |
 
 return: rows array of columns objects
 
 
 ### `CSV.write(rows[,sep[,eol]])`
 
-| parameter | default value    | purpose                             |
-|-----------|------------------|-------------------------------------|
-| `rows`    |                  | array of arrays, objects, or scalar |
-| `sep`     | ;                | columns separator                   |
-| `eol`     | \n               | rows separator                      |
+| parameter | default value | type   | purpose                           |
+|-----------|---------------|--------|-----------------------------------|
+| `raw`     |               | string |a string with the raw encoded csv  |
+| `sep`     | ;             | string |columns separator                  |
+| `eol`     | \n            | string |rows separator                     |
 
 return: string of the encoded csv
 
@@ -42,7 +42,7 @@ return: string of the encoded csv
 ## sample usage
 
 ```javascript
-//read as array of arrays
+//read as (rows) array of (columns) arrays
 CSV.read("a;b\n1;2\n11;22")                      //=> [["a","b"],[1,2],[11,22]]
 
 //read as array of objects using the first row columns names
