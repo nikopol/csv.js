@@ -1,4 +1,4 @@
-# CSV 1.0
+# CSV 1.1
 niko 2018
 
 small (3k) CSV read/writer in vanilla flavor of javascript.

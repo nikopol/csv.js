@@ -1,4 +1,4 @@
-//CSV 1.0 reader/writer
+//CSV 1.1 reader/writer
 //niko 2018 - https://github.com/nikopol/csv.js
 
 /*
