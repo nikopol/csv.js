@@ -30,15 +30,18 @@ const CSV = (() => {
 
   //decode a value
   function decode(v){
-    const len = typeof(v) === 'string' ? v.length : 0;
-    if( len ){
-      if( v[0] === '"' && v[len-1] === '"' )
-        //remove quotes of "quoted" value & unescape quotes
-        v = v.substr(1,len-2).replace(/""/g,'"');
-      else {
-        //trim & unescape quotes
-        v = v.replace(/^\s+|\s+$/g,'').replace(/""/g,'"');
-        if( isNum(v) ) v = parseFloat(v);
+    if( typeof(v) === 'string' ) {
+      v = v.replace(/^\s+|\s+$/g,'');
+      const len = v.length;
+      if( len ){
+        if( v[0] === '"' && v[len-1] === '"' )
+          //remove quotes of "quoted" value & unescape quotes
+          v = v.substr(1,len-2).replace(/""/g,'"');
+        else {
+          //trim & unescape quotes
+          v = v.replace(/""/g,'"');
+          if( isNum(v) ) v = parseFloat(v);
+        }
       }
     }
     return v;
